@@ -1,0 +1,330 @@
+@import url('https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+
+:root {
+  --main: #37996b;
+  --alert: #993737;
+  --dark: #2f2f32;
+  --deeb: #161617;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+
+body {
+  min-height: 100vh;
+  max-height: 100vh;
+  background: var(--deeb);
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+input {
+  width: 100%;
+  height: 3vw;
+  background: inherit;
+  border: 0.3vw solid #ccc;
+  padding: 0 1vw;
+  font-size: 1.2vw;
+  color: #fff;
+  border-radius: 1vw;
+  outline: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+button {
+  width: 100%;
+  height: 3vw;
+  background: var(--main);
+  border-radius: 1vw;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  color: #fff;
+  gap: 0.5vw;
+}
+
+i.fi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 40vw;
+  margin: auto;
+}
+
+form.search {
+  margin: 10% 0 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.alert {
+  background: var(--alert);
+  color: #fff;
+  border-radius: 0.5vw;
+  font-size: 1vw;
+  text-transform: uppercase;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert.active {
+  height: 2.2vw;
+  opacity: 1;
+  visibility: visible;
+}
+
+form.search input {
+  width: 100%;
+  height: 4vw;
+  background: inherit;
+  border: 0.3vw solid #ccc;
+  padding: 0 11vw 0 1.2vw;
+  font-size: 1.2vw;
+  color: #fff;
+  border-radius: 100vw;
+  outline: none;
+}
+
+form.search input.active {
+  border-color: var(--main);
+}
+
+form.search input:focus {
+  border-color: var(--main);
+}
+
+form.search button {
+  width: 8vw;
+  height: 3vw;
+  background: var(--main);
+  border-radius: 100vw;
+  border: none;
+  position: absolute;
+  top: 0.5vw;
+  right: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2vw;
+  text-transform: uppercase;
+  color: #fff;
+  gap: 0.5vw;
+  opacity: 0;
+  visibility: hidden;
+}
+
+form.search button.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Bookmarks Bar */
+ul.bookmarks {
+  padding: 0.3vw;
+  margin: 0 0 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7vw;
+  overflow: scroll;
+  max-height: 28.5vw;
+}
+
+ul.bookmarks::-webkit-scrollbar {
+  display: none;
+}
+
+ul.bookmarks li a {
+  width: 5vw;
+  height: 5vw;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 0.3vw solid #5d5d5d;
+  box-shadow: inset 0 0 1.5vw #5d5d5d;
+  font-size: 1vw;
+  position: relative;
+}
+
+ul.bookmarks li a img {
+  background: inherit;
+  padding: 0.5vw;
+  border-radius: 3vw;
+  object-fit: fill;
+}
+
+ul.bookmarks li a .edit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  border-radius: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vw;
+  color: #fff;
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+ul.bookmarks li a .remove {
+  width: 1.5vw;
+  height: 1.5vw;
+  background: var(--alert);
+  position: absolute;
+  top: -0.2vw;
+  right: -0.2vw;
+  border-radius: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+}
+
+ul.bookmarks li a.edit .edit {
+  opacity: 1;
+  visibility: visible;
+}
+
+ul.bookmarks li a.edit .remove {
+  opacity: 1;
+  visibility: visible;
+}
+
+ul.bookmarks li a:hover {
+  scale: 1.1;
+  border-color: var(--main);
+  box-shadow: inset 0 0 1vw var(--main);
+}
+
+ul.bookmarks li a.edit:hover .edit {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Add Bookmark */
+.add_bookmark {
+  padding: 1vw;
+  width: 10vw;
+  margin: auto;
+  background: var(--main);
+  border-radius: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1vw;
+  left: 0;
+  right: 0;
+  font-size: 1vw;
+}
+
+/* Modal */
+.modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal .backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1vw);
+  transition: 0;
+}
+
+.modal .content {
+  max-width: 30vw;
+  padding: 2vw;
+  background: var(--dark);
+  position: relative;
+  z-index: 99;
+  border-radius: 2vw;
+}
+
+.modal .content form {
+  padding: 2vw 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.modal .content form .avatar {
+  padding: 0.5vw;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: -2.5vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 0.3vw solid var(--main);
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

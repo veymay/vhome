@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="img/favicon-196x196.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <div class="backdrop"></div>
+  <div class="container">
+    <form action="http://www.yandex.com/search" class="search">
+      <input type="search" name="text" autocomplete="off" class="search_input">
+      <button class="search_btn"><i class="fi fi-br-search"></i> izlash</button>
+    </form>
+    <ul class="bookmarks">
+      <li>
+        <a href="https://${url}">
+          <img src="https://www.google.com/s2/favicons?sz=256&domain_url=${url}" alt="">
+          <div class="edit"> <i class="fi fi-br-pen-nib"></i> </div>
+        </a>
+      </li>
+    </ul>
+    <div class="add_bookmark"><i class="fi fi-br-plus"></i></div>
+  </div>
+
+  <div class="modal">
+    <div class="backdrop animate_animated animate__fadeIn"></div>
+    <div class="content">
+      <form action="#" class="add_site">
+        <div class="avatar">
+          <img src="" alt="">
+        </div>
+        <div class="alert animate__animated">Bu sayt qo'shilgan</div>
+        <input type="text" placeholder="Manzilni kiriting..">
+        <button>Qo'shish</button>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
